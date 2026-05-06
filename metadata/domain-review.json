@@ -1,0 +1,73 @@
+{
+  "repo": "ledger-mesh-gossip-gate",
+  "language": "SQL",
+  "category": "Distributed systems",
+  "goal": "Implement an SQL distributed systems project for gossip event replay, using fixture event logs and golden state snapshots.",
+  "review_model": {
+    "terms": [
+      "quorum health",
+      "lease drift",
+      "replica lag",
+      "membership churn"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "quorum health",
+      "signal": 77,
+      "slack": 40,
+      "drag": 19,
+      "confidence": 91,
+      "score": 228,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "lease drift",
+      "signal": 47,
+      "slack": 43,
+      "drag": 25,
+      "confidence": 94,
+      "score": 156,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "replica lag",
+      "signal": 67,
+      "slack": 32,
+      "drag": 32,
+      "confidence": 69,
+      "score": 139,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "membership churn",
+      "signal": 72,
+      "slack": 40,
+      "drag": 13,
+      "confidence": 88,
+      "score": 233,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "quorum health",
+      "signal": 90,
+      "slack": 36,
+      "drag": 11,
+      "confidence": 55,
+      "score": 238,
+      "lane": "ship"
+    }
+  ]
+}
