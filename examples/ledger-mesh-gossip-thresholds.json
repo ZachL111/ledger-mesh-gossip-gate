@@ -1,0 +1,17 @@
+{
+  "repo": "ledger-mesh-gossip-gate",
+  "thresholds": {
+    "signal": 3,
+    "slack": 1,
+    "confidence": 1,
+    "drag": 5,
+    "ship": 196,
+    "watch": 118
+  },
+  "terms": [
+    "quorum health",
+    "lease drift",
+    "replica lag",
+    "membership churn"
+  ]
+}
